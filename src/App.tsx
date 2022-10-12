@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CustomTypography } from "./components/CustomTypography";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CustomTypography variant={"h1"} text={"This is AMEY"} />
+      <CustomTypography variant={"h2"} text={"This is AMEY"} />
+      <CustomTypography variant={"h3"} text={"This is AMEY"} />
+      <CustomTypography variant={"h4"} text={"This is AMEY"} />
+      <CustomTypography variant={"h5"} text={"This is AMEY"} />
+      <CustomTypography variant={"h6"} text={"This is AMEY"} />
+      <CustomTypography variant={"subtitle2"} text={"This is AMEY"} />
+      <CustomTypography variant={"subtitle1"} text={"This is AMEY"} />
     </div>
   );
 }
