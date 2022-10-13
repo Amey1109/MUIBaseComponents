@@ -25,7 +25,7 @@ export const CustomButtonGroup: React.FC<CustomButtonGroupProps> = ({
 }: CustomButtonGroupProps) => {
   useEffect(() => {
     if (!buttonsArray.length) {
-      throw new Error("Button Array should contain atleat on element");
+      throw new Error("Array should contain atleat on element");
     }
   }, [buttonsArray]);
 
