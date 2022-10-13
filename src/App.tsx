@@ -1,17 +1,27 @@
-import { CustomButton } from "./components/CustomButton";
-import SearchIcon from "@mui/icons-material/Search";
+import { CustomButtonGroup } from "./components/CustomButtonGroup";
 
 function App() {
+  const ButtonGroupArray = [
+    {
+      id: "LeftButton",
+      buttonLabel: "Left",
+      buttonOnClick: () => alert("Left"),
+    },
+    {
+      id: "MiddleButton",
+      buttonLabel: "Middle",
+      buttonOnClick: () => alert("Middle"),
+    },
+    {
+      id: "RightButton",
+      buttonLabel: "Right",
+      buttonOnClick: () => alert("Right"),
+    },
+  ];
+
   return (
     <div>
-      <CustomButton
-        buttonText="Click"
-        onClickHandler={(e) => {
-          console.log(e);
-        }}
-        isIconButton={true}
-        Icon={<SearchIcon />}
-      />
+      <CustomButtonGroup  id="Button Group Test" buttonsArray={ButtonGroupArray} />
     </div>
   );
 }

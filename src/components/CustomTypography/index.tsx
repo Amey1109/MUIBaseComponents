@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 
 interface CustomTypographyProps {
+  id: string;
   text: string;
   variant:
     | "h1"
@@ -17,13 +18,14 @@ interface CustomTypographyProps {
 }
 
 export const CustomTypography: React.FC<CustomTypographyProps> = ({
+  id = "",
   text = "",
   variant = "h4",
   otherProps = {},
 }: CustomTypographyProps) => {
   return (
     <div>
-      <Typography variant={variant} {...otherProps}>
+      <Typography id={id} variant={variant} {...otherProps}>
         {text}
       </Typography>
     </div>
