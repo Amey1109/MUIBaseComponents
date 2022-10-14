@@ -13,13 +13,14 @@ interface CustomButtonProps {
   endIcon?: any;
   startIcon?: any;
   Icon?: any;
+  isDisabled?: boolean;
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
   buttonText = "",
   color = "primary",
   onClickHandler = (e: React.MouseEventHandler) => {},
-  id="",
+  id = "",
   otherProps = {},
   variant = "contained",
   size = "medium",
@@ -27,9 +28,12 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   startIcon = <></>,
   isIconButton = false,
   Icon = <></>,
+  isDisabled = false,
 }: CustomButtonProps) => {
   return isIconButton ? (
-    <IconButton id={id} aria-label={buttonText}>{Icon}</IconButton>
+    <IconButton disabled={isDisabled} id={id} aria-label={buttonText}>
+      {Icon}
+    </IconButton>
   ) : (
     <Button
       {...otherProps}
@@ -39,6 +43,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       startIcon={startIcon}
       size={size}
       color={color}
+      disabled={isDisabled}
       onClick={(e: any) => {
         onClickHandler(e);
       }}
