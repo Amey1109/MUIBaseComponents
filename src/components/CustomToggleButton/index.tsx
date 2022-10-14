@@ -46,7 +46,7 @@ export const CustomeToggleButton: React.FC<CustomToggleButtonProps> = ({
     >
       {toggleButtonArray.map((toggleButton, index) => {
         const { buttonText = "", buttonValue = "" } = toggleButton;
-        return <ToggleButton value={buttonText}>{buttonValue}</ToggleButton>;
+        return <ToggleButton  key={`${index}_${id}`} value={buttonText}>{buttonValue}</ToggleButton>;
       })}
     </ToggleButtonGroup>
   );
