@@ -19,6 +19,7 @@ interface CustomRadioButtonProps {
   onChangeHandler?: (e: any) => any;
   size?: "small" | "medium";
   color?: "primary" | "secondary" | "error" | "warning" | "info" | "success";
+  isHorizontal?: boolean
 }
 
 export const CustomRadioButton: React.FC<CustomRadioButtonProps> = ({
@@ -28,6 +29,7 @@ export const CustomRadioButton: React.FC<CustomRadioButtonProps> = ({
   onChangeHandler = (e: any) => {},
   size = "small",
   color = "primary",
+  isHorizontal=true
 }: CustomRadioButtonProps) => {
   const [value, setValue] = useState("");
   useEffect(() => {
@@ -46,6 +48,7 @@ export const CustomRadioButton: React.FC<CustomRadioButtonProps> = ({
           setValue(event.target.value);
           onChangeHandler(event.target.value);
         }}
+        row={isHorizontal}
       >
         {options.map(({ radioLabel, radioValue }) => {
           return (

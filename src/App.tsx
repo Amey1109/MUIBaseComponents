@@ -1,26 +1,26 @@
+import { CustomCheckBoxGroup } from "./components/CustomCheckboxGroup";
 import { CustomRadioButton } from "./components/CustomRadioButton";
 
 function App() {
   const options = [
     {
-      radioLabel: "Male",
-      radioValue: "Male",
+      checkboxLabel: "Male",
+      checkboxValue: "Male",
     },
     {
-      radioLabel: "Female",
-      radioValue: "Female",
+      checkboxLabel: "Female",
+      checkboxValue: "Female",
     },
   ];
   return (
     <div>
-      <CustomRadioButton
-        id="test-radio"
-        onChangeHandler={(value) => {
-          console.log(value, "<--");
-        }}
+      <CustomCheckBoxGroup
+        id="checkbox-text"
         options={options}
-        label={"Select Gender"}
-        color={"error"}
+        onChangeHandler={(value) => {
+          console.log(value);
+        }}
+        label="foo bar"
       />
     </div>
   );
