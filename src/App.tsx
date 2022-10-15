@@ -1,30 +1,26 @@
-import { CustomSelect } from "./components/CustomSelect";
+import { CustomRadioButton } from "./components/CustomRadioButton";
 
 function App() {
   const options = [
     {
-      optionValue: "IN",
-      optionLabel: "India",
+      radioLabel: "Male",
+      radioValue: "Male",
     },
     {
-      optionValue: "AU",
-      optionLabel: "Australia",
-    },
-    {
-      optionValue: "USA",
-      optionLabel: "United States",
+      radioLabel: "Female",
+      radioValue: "Female",
     },
   ];
   return (
     <div>
-      <CustomSelect
-        id="Test"
-        optionsArray={options}
-        label="Select Country"
-        onChangeHandler={(e) => {
-          console.log("->", e);
+      <CustomRadioButton
+        id="test-radio"
+        onChangeHandler={(value) => {
+          console.log(value, "<--");
         }}
-        isMultiSelect
+        options={options}
+        label={"Select Gender"}
+        color={"error"}
       />
     </div>
   );
