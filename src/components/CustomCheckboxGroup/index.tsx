@@ -48,7 +48,7 @@ export const CustomCheckBoxGroup: React.FC<CustomCheckboxGroupProps> = ({
   }, [values]);
 
   return (
-    <FormControl error={isError}>
+    <FormControl error={isError} id={id}>
       <FormLabel>{label}</FormLabel>
       <FormGroup row={isHorizontal}>
         {options.map(({ checkboxLabel, checkboxValue }) => {
